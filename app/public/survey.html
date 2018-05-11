@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Friend Finder</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Friend Finder</h1>
+      <h3>Find yourself a friend by answering these questions!</h3>
+      <hr>
+      <a href="/"><button class="btn btn-danger btn-lg"><span class="fa fa-minus"></span> Home Page </button></a>
+      <a href="/api/friends"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View Friends</button></a>
+    </div>
+    <div class="row">
+
+      <div class="col-lg-12">
+
+        <!-- <h2>Please enter an integer between 1-5</h2> -->
+        <div class="panel panel-default">
+
+          <div class="form-group">
+              <label for="name"><h3>Name</h3></label>
+              <input type="text" class="form-control" id="name">
+            </div>
+
+          <div class="panel-heading">
+            <p class="panel-title"><strong>Please enter an integer between 1-5 for the following questions:</strong></p>
+            <br>
+          </div>
+          <div class="panel-body">
+            <form method="POST" role="form">
+
+
+              <div class="form-group">
+                <label for="strength">Rate your strength</label>
+                <input type="number" class="form-control" id="strength">
+              </div>
+              
+              <div class="form-group">
+                <label for="flexibility">Rate your flexibility</label>
+                <input type="number" class="form-control" id="flexibility">
+              </div>
+              
+              <div class="form-group">
+                <label for="stamina">Rate your stamina</label>
+                <input type="number" class="form-control" id="stamina">
+              </div>
+
+              <div class="form-group">
+                <label for="diet">Rate your diet</label>
+                <input type="number" class="form-control" id="diet">
+              </div>
+
+              <div class="form-group">
+                <label for="balance">Rate your balance</label>
+                <input type="number" class="form-control" id="balance">
+              </div>
+
+              <div class="form-group">
+                <label for="competitiveness">Rate your competitiveness</label>
+                <input type="number" class="form-control" id="competitiveness">
+              </div>
+
+              <div class="form-group">
+                <label for="vertical">Rate your vertical jump</label>
+                <input type="number" class="form-control" id="vertical">
+              </div>
+
+              <div class="form-group">
+                <label for="energy">Rate your energy level </label>
+                <input type="number" class="form-control" id="energy">
+              </div>
+
+              <div class="form-group">
+                <label for="aggressiveness">Rate your aggressiveness</label>
+                <input type="number" class="form-control" id="aggressiveness">
+              </div>
+
+              <div class="form-group">
+                <label for="fitness">Rate your overall fitness</label>
+                <input type="number" class="form-control" id="fitness">
+              </div>
+
+            </form>
+            <br>
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="fa fa-fire"></span>Find a Friend</button>
+            </div>
+          </div>
+        </div>
+        <footer class="footer">
+          <div class="container">
+
+              <!-- <button id="myBtn">Open Modal</button> -->
+  
+              <div id="myModal" class="modal">
+            
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Some text in the Modal..</p>
+                  </div>
+                
+                </div>
+              </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+    var modal = document.getElementById('myModal');
+    // var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+    
+    // btn.onclick = function() {
+    //   modal.style.display = "block";
+    // }
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+    } 
+    // Collects the information in inputs and saves to new character when button is clicked
+    $("#add-btn").on("click", function(event) {
+      modal.style.display = "block";
+
+      // modal.innerHTML = "hello world";
+      // alert("Test");
+      // console.log("Test");
+      event.preventDefault();
+      var score = [];
+      var name = $("#name").val().trim();
+      
+      var strength = $("#strength").val().trim();
+      var flexibility = $("#flexibility").val().trim();
+      var stamina = $("#stamina").val().trim();
+      var diet = $("#diet").val().trim();
+      var balance = $("#balance").val().trim();
+      var competitiveness = $("#competitiveness").val().trim();
+      var vertical = $("#vertical").val().trim();
+      var energy = $("#energy").val().trim();
+      var aggressiveness = $("#aggressiveness").val().trim();
+      var fitness = $("#fitness").val().trim();
+
+      if( name && (strength > 0 && strength <6) && (flexibility > 0 && flexibility <6) && (stamina > 0 && stamina <6) && (diet > 0 && diet <6) && (balance > 0 && balance <6)&& (competitiveness > 0 && competitiveness <6)&& (vertical > 0 && vertical <6)&& (energy > 0 && energy <6)&& (aggressiveness > 0 && aggressiveness <6)&& (fitness > 0 && fitness <6)){
+        
+        score.push(strength);
+        score.push(flexibility);
+        score.push(stamina);
+        score.push(diet);
+        score.push(balance);
+        score.push(competitiveness);
+        score.push(vertical);
+        score.push(energy);
+        score.push(aggressiveness);
+        score.push(fitness);
+      } else {
+        alert("Please check your inputs");
+      }
+
+      
+      var newfriend = {
+        name: name,
+        photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        scores: score,
+      }
+      
+      // Posts newfriend JSON to this route 
+      $.post("/api/test", newfriend)
+        .then(function(data) {
+          console.log("Posting", newfriend);
+          // modal.innerHTML = Object.keys(data);
+          // modal.innerHTML = data.name;
+          res.redirect("/");
+        });
+
+      $.get("../../server.js", function(data, status){
+        console.log("Test");
+        alert("Data: " + data + "\nStatus: " + status);
+      });
+        
+      // res.redirect("/");
+        // alert(score);
+    });
+  </script>
+
+</body>
+</html>
