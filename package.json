@@ -17,8 +17,8 @@
     "url": "https://github.com/max-liao/FriendFinder/issues"
   },
   "dependencies": {
-    "body-parser": "^1.15.0",
-    "express": "^4.13.4"
+    "body-parser": "^5.6.0",
+    "express": "^5.6.0"
   },
   "homepage": "https://github.com/max-liao/FriendFinder#readme"
 }
