@@ -79,7 +79,7 @@ You will use Express to handle routing. Make sure you deploy your app to Heroku 
    * The closest match will be the user with the least amount of difference.
 
 7. Once you've found the current user's most compatible friend, display the result as a modal pop-up.
-   * The modal should display both the name and picture of the closest match. 
+   * The modal should display both the name and picture of the closest match.
 
 - - -
 

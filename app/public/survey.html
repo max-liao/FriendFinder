@@ -173,18 +173,21 @@
       }
 
       
-      var newfriend = {
+      var foundfriend = {
         name: name,
         photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
         scores: score,
       }
       
       // Posts newfriend JSON to this route 
-      $.post("/api/test", newfriend)
-        .then(function(data) {
-          console.log("Posting", newfriend);
+      $.post("/api/test", foundfriend, function(data){
+        // .then(function(data) {
+          console.log("Posting", foundfriend);
+          // var friends = require(path.join(__dirname, "/../data/friends.js"));
           // modal.innerHTML = Object.keys(data);
-          // modal.innerHTML = data.name;
+          var display = "<h1>" + data.name + "</h1>";
+          display += " <img src="+ data.photo + ">";
+          modal.innerHTML = display;
           res.redirect("/");
         });
 

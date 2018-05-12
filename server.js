@@ -47,7 +47,6 @@ app.post("/api/test", function(req, res) {
   var solutionname;
 
   for (i=0; i< friends.friends.length; i++){
-
     differencesarray[i] = 0;
     console.log(friends.friends[i].scores);
     for (j=0; j<10; j++){
@@ -58,11 +57,19 @@ app.post("/api/test", function(req, res) {
     if (solution > differencesarray[i]){
       solution = differencesarray[i];
       solutionname = friends.friends[i].name;
+      solutionphoto = friends.friends[i].photo;
     }
   }
   
   // var modal = document.getElementById('myModal');
   console.log(solutionname);
+  console.log(solutionphoto);
+
+  var match = {
+    name: solutionname,
+    photo: solutionphoto,
+  }
+
   // window.alert(solutionname);
   // modal.innerHTML(solutionname);
   // console.log(differencesarray);
@@ -73,7 +80,7 @@ app.post("/api/test", function(req, res) {
   newfriend.routeName = newfriend.name.replace(/\s+/g, "").toLowerCase();
 
   // friends.push(newfriend);
-  res.json(newfriend);
+  res.json(match);
 
 });
 

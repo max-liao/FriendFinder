@@ -1,7 +1,7 @@
 var friends = [
   {
     "name":"Ahmed",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "photo":"https://www.what-dog.net/Images/faces2/scroll005.jpg",
     "scores":[
       5,
       1,
@@ -17,7 +17,7 @@ var friends = [
   },
   {
     "name":"Max",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "photo":"https://www.what-dog.net/Images/faces2/scroll009.jpg",
     "scores":[
       5,
       1,
@@ -33,7 +33,7 @@ var friends = [
   },
   {
     "name":"Jane",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "photo":"https://www.what-dog.net/Images/faces2/scroll007.jpg",
     "scores":[
       1,
       1,
@@ -49,7 +49,7 @@ var friends = [
   },
   {
     "name":"Janet",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "photo":"https://www.what-dog.net/Images/faces2/scroll0010.jpg",
     "scores":[
       5,
       1,
