@@ -15,12 +15,10 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/max-liao/FriendFinder/issues"
-  },"dependencies": {
-    "express": "5.6.0",
-	"body-parser": "5.6.0",
-	"path": "5.6.0"
   },
-
+  "dependencies": {
+    "express": "^4.13.4",
+    "body-parser": "^1.15.0"
+  },
   "homepage": "https://github.com/max-liao/FriendFinder#readme"
 }
- 
